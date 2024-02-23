@@ -1,3 +1,4 @@
+#[macro_export]
 macro_rules! read_csr {
     ($csr_number:literal) => {
         /// Reads the CSR
@@ -18,6 +19,7 @@ macro_rules! read_csr {
     };
 }
 
+#[macro_export]
 macro_rules! read_csr_rv32 {
     ($csr_number:literal) => {
         /// Reads the CSR
@@ -38,6 +40,7 @@ macro_rules! read_csr_rv32 {
     };
 }
 
+#[macro_export]
 macro_rules! read_csr_as {
     ($register:ident, $csr_number:literal) => {
         read_csr!($csr_number);
@@ -52,6 +55,7 @@ macro_rules! read_csr_as {
     };
 }
 
+#[macro_export]
 macro_rules! read_csr_as_rv32 {
     ($register:ident, $csr_number:literal) => {
         read_csr_rv32!($csr_number);
@@ -66,6 +70,7 @@ macro_rules! read_csr_as_rv32 {
     };
 }
 
+#[macro_export]
 macro_rules! read_csr_as_usize {
     ($csr_number:literal) => {
         read_csr!($csr_number);
@@ -78,6 +83,7 @@ macro_rules! read_csr_as_usize {
     };
 }
 
+#[macro_export]
 macro_rules! read_csr_as_usize_rv32 {
     ($csr_number:literal) => {
         read_csr_rv32!($csr_number);
@@ -90,6 +96,7 @@ macro_rules! read_csr_as_usize_rv32 {
     };
 }
 
+#[macro_export]
 macro_rules! write_csr {
     ($csr_number:literal) => {
         /// Writes the CSR
@@ -107,6 +114,7 @@ macro_rules! write_csr {
     };
 }
 
+#[macro_export]
 macro_rules! write_csr_rv32 {
     ($csr_number:literal) => {
         /// Writes the CSR
@@ -124,6 +132,7 @@ macro_rules! write_csr_rv32 {
     };
 }
 
+#[macro_export]
 macro_rules! write_csr_as_usize {
     ($csr_number:literal) => {
         write_csr!($csr_number);
@@ -136,6 +145,7 @@ macro_rules! write_csr_as_usize {
     };
 }
 
+#[macro_export]
 macro_rules! write_csr_as_usize_rv32 {
     ($csr_number:literal) => {
         write_csr_rv32!($csr_number);
@@ -148,6 +158,7 @@ macro_rules! write_csr_as_usize_rv32 {
     };
 }
 
+#[macro_export]
 macro_rules! set {
     ($csr_number:literal) => {
         /// Set the CSR
@@ -165,6 +176,7 @@ macro_rules! set {
     };
 }
 
+#[macro_export]
 macro_rules! set_rv32 {
     ($csr_number:literal) => {
         /// Set the CSR
@@ -182,6 +194,7 @@ macro_rules! set_rv32 {
     };
 }
 
+#[macro_export]
 macro_rules! clear {
     ($csr_number:literal) => {
         /// Clear the CSR
@@ -199,6 +212,7 @@ macro_rules! clear {
     };
 }
 
+#[macro_export]
 macro_rules! clear_rv32 {
     ($csr_number:literal) => {
         /// Clear the CSR
@@ -216,6 +230,7 @@ macro_rules! clear_rv32 {
     };
 }
 
+#[macro_export]
 macro_rules! set_csr {
     ($(#[$attr:meta])*, $set_field:ident, $e:expr) => {
         $(#[$attr])*
@@ -226,6 +241,7 @@ macro_rules! set_csr {
     };
 }
 
+#[macro_export]
 macro_rules! clear_csr {
     ($(#[$attr:meta])*, $clear_field:ident, $e:expr) => {
         $(#[$attr])*
@@ -236,6 +252,7 @@ macro_rules! clear_csr {
     };
 }
 
+#[macro_export]
 macro_rules! set_clear_csr {
     ($(#[$attr:meta])*, $set_field:ident, $clear_field:ident, $e:expr) => {
         set_csr!($(#[$attr])*, $set_field, $e);
@@ -243,6 +260,7 @@ macro_rules! set_clear_csr {
     }
 }
 
+#[macro_export]
 macro_rules! read_composite_csr {
     ($hi:expr, $lo:expr) => {
         /// Reads the CSR as a 64-bit value
@@ -265,6 +283,7 @@ macro_rules! read_composite_csr {
     };
 }
 
+#[macro_export]
 macro_rules! set_pmp {
     () => {
         /// Set the pmp configuration corresponding to the index
@@ -285,6 +304,7 @@ macro_rules! set_pmp {
     };
 }
 
+#[macro_export]
 macro_rules! clear_pmp {
     () => {
         /// Clear the pmp configuration corresponding to the index

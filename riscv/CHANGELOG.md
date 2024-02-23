@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Export all csr access macros
+
 ## [v0.11.1] - 2024-02-15
 
 ### Changed
